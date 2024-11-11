@@ -14,8 +14,8 @@ type BookHandler struct {
 	serviceBooks service.BookService
 }
 
-func NewBookHandler(bs service.BookService) BookHandler {
-	return BookHandler{serviceBooks: bs}
+func NewBookHandler(bs service.BookService) *BookHandler {
+	return &BookHandler{serviceBooks: bs}
 }
 
 func (bh *BookHandler) CreateBookHandler(w http.ResponseWriter, r *http.Request) {

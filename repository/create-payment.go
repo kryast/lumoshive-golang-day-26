@@ -9,8 +9,8 @@ type PaymentRepository struct {
 	DB *sql.DB
 }
 
-func NewPaymentRepository(db *sql.DB) *PaymentRepository {
-	return &PaymentRepository{DB: db}
+func NewPaymentRepository(db *sql.DB) PaymentRepository {
+	return PaymentRepository{DB: db}
 }
 
 func (r *PaymentRepository) Create(payment *model.Payment) error {

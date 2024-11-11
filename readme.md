@@ -1,1 +1,1 @@
-curl -X POST http://localhost:8080/payment -d {"name": "tes", "photo": "onepiece.jpg", "is_active": true}'
+curl -X POST http://localhost:8080/payment -d '{"name": "tes", "photo": "onepiece.jpg", "is_active": true}'
