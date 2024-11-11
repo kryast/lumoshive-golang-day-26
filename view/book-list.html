@@ -1,0 +1,45 @@
+{{define "book-list-view"}}
+{{template "layout-view"}}
+    <header>
+        <h1>Daftar Buku</h1>
+    </header>
+
+    <section id="book-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Kode Buku</th>
+                    <th>Nama Buku</th>
+                    <th>Jenis Buku</th>
+                    <th>Pengarang</th>
+                    <th>Harga</th>
+                    <th>Diskon</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .Books}} 
+                <tr>
+                    <td>{{.ID}}</td> 
+                    <td>{{.Title}}</td> 
+                    <td>{{.Category}}</td> 
+                    <td>{{.Author}}</td> 
+                    <td>Rp{{.Price | printf "%.2f"}}</td> 
+                    <td>{{.Discount}}%</td> 
+                    <td>
+                        <a href="/edit-book/{{.ID}}">Edit</a> |
+                        <form action="/delete-book/{{.ID}}" method="POST" style="display:inline;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="7">Tidak ada buku untuk ditampilkan</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </section>
+{{end}}

@@ -1,0 +1,34 @@
+{{define "create-book-view"}}
+{{template "layout-view"}}
+    <header>
+        <h1>Tambah Buku Baru</h1>
+    </header>
+
+    <section id="add-book">
+        <form action="/create-book" method="POST" enctype="multipart/form-data">
+            <label for="title">Nama Buku:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="category">Jenis Buku:</label>
+            <input type="text" id="category" name="category" required>
+
+            <label for="author">Pengarang:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="price">Harga:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="discount">Diskon (%):</label>
+            <input type="number" id="discount" name="discount">
+
+            <label for="book_cover">Foto Cover Buku:</label>
+            <input type="file" id="cover" name="cover" accept="image/*" >
+
+            <label for="book_file">File Buku (PDF):</label>
+            <input type="file" id="file" name="file" accept="application/pdf" >
+
+            <button type="submit">Simpan Buku</button>
+        </form>
+    </section>
+
+{{end}}

@@ -1,0 +1,18 @@
+{{define "dashboard-view"}}
+{{template "layout-view"}}
+    <section id="dashboard">
+        <h2>Welcome to the Book Management Dashboard</h2>
+        <div class="card">
+            <h3>Total Buku</h3>
+            <p>{{.TotalBooks}}</p>
+        </div>
+        <div class="card">
+            <h3>Total Penjualan</h3>
+            <p>{{.TotalOrder}}</p>
+        </div>
+        <div class="card">
+            <h3>Rating Tertinggi</h3>
+            <p>4.9 / 5</p>
+        </div>
+    </section>
+{{end}}
